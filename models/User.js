@@ -5,15 +5,17 @@ const UserSchema = new Schema({
     username: {
         type: String,
         unique: true,
-        allowNull: false,
-        // Trimmed
+        required: true,
+        trim: true
     },
     email: {
         type: String,
-        allowNull: false,
+        required: true,
         unique:true,
         validate:{
-            isEmail:true
+            validator:()=> Promis.resolve(false),
+            message: 'Email validation failed'
+            // isEmail:true
         }
     },
     thoughts: [{

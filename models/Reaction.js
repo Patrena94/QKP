@@ -3,11 +3,11 @@ const Reaction = model('Reaction', ReactionSchema);
 const dateFormat = require('../utils/dateFormat');
 
 const ReactionSchema = new Schema ({
-    // Reaction_text: {
-    //     type: String,
-    //     allowNull: false,
-    //     // len: [280]
-    // },
+    Reaction_text: {
+        type: String,
+        required: true,
+        maxLength: 280
+    },
     createdAt: {
         type: Date,
         default: Date.now,
@@ -15,7 +15,7 @@ const ReactionSchema = new Schema ({
     },
     username: {
     type: String,
-    allowNull: false
+    required: true
     },
     reactions: [{
         type: Schema.Types.ObjectId,

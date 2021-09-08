@@ -11,7 +11,7 @@ const ReactionSchema = new Schema({
     Reaction_text: {
         type: String,
         allowNull: false,
-        // len: [280]
+        maxLength: 280
     },
     createdAt: {
         type: Date,
@@ -20,7 +20,7 @@ const ReactionSchema = new Schema({
     },
     username: {
     type: String,
-    allowNull: false
+    required: true,
     },
 
     Reaction: [ReactionSchma]
@@ -36,8 +36,9 @@ const ReactionSchema = new Schema({
 const ThoughtSchema = new Schema ({
     thought_text: {
         type: String,
-        allowNull: false,
-        // len: [280]
+        required: true,
+        minLength: 1,
+        maxLength:280
     },
     createdAt: {
         type: Date,
@@ -46,7 +47,7 @@ const ThoughtSchema = new Schema ({
     },
     username: {
     type: String,
-    allowNull: false
+    required: true
     },
     reactions: [{
         type: Schema.Types.ObjectId,
