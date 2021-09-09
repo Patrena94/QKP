@@ -70,5 +70,32 @@ deleteUser({ params}, res) {
     .catch(err => res.status(400).json(err));
 }
 };
+//add friend by userid/friends/:friendId
+
+addFriend({ params, body }, res) {
+  User.findOneAndUpdate(
+    { _id: params.UsertId },
+    { $push: { friends: body } },
+    { new: true }
+  )
+    .then(dbUserData => {
+      if (!dbUserData) {
+        res.status(404).json({ message: 'No User found with this id!' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => res.json(err));
+}
+ // remove friend-userId/friends/:friendId
+ removeFriend({ params }, res) {
+  User.findOneAndUpdate(
+    { _id: params.UserId },
+    { $pull: { Friends: { FriendId: params.FriendId } } },
+    { new: true }
+  )
+    .then(dbUserData => res.json(dbUserData))
+    .catch(err => res.json(err));
+};
 
 module.exports = userController;
