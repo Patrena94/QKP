@@ -22,13 +22,12 @@ const ReactionSchema = new Schema({
   },
 
   // reaction: [ReactionSchema]},
-
   // {
-      toJSON: {
-        getters: true,
-        virtuals: false
-      },
-      id: false
+      // toJSON: {
+      //   getters: true
+      //   // virtuals: false
+      // },
+      // id: false
     }
   );
 

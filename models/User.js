@@ -13,7 +13,7 @@ const UserSchema = new Schema({
         required: true,
         unique:true,
         validate:{
-            validator:()=> Promis.resolve(false),
+            validator:()=> Promise.resolve(false),
             message: 'Email validation failed'
             // isEmail:true
         }

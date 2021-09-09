@@ -7,12 +7,12 @@ router.use('/thoughts', thoughtRoutes);
 router.use('/users', userRoutes);
 
 // /api/thoughts/<userId>
-router.route('/:userId').post(addthought);
+router.route('/:userId').post(addThought);
 const {
     addThought,
     removeThought,
     addReaction,
-    removeReaction
+    removeReaction,
   } = require('../../controllers/thought-controller');
 // /api/thoughts/<userId>/<thoughtId>
 router.route('/:userId/:thoughtId').delete(removethought);
@@ -21,7 +21,7 @@ router
   .put(addReaction)
   .delete(removeThought)
 
-  router.route('/:UserId/:thoughtId/:reactionId').delete(removereaction);
+  router.route('/:UserId/:thoughtId/:reactionId').delete(removeReaction);
 
 
 
