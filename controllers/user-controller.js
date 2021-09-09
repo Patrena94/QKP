@@ -68,8 +68,7 @@ deleteUser({ params}, res) {
         res.json(dbUserData);
     })
     .catch(err => res.status(400).json(err));
-}
-};
+},
 //add friend by userid/friends/:friendId
 
 addFriend({ params, body }, res) {
@@ -86,7 +85,7 @@ addFriend({ params, body }, res) {
       res.json(dbUserData);
     })
     .catch(err => res.json(err));
-}
+},
  // remove friend-userId/friends/:friendId
  removeFriend({ params }, res) {
   User.findOneAndUpdate(
@@ -96,6 +95,7 @@ addFriend({ params, body }, res) {
   )
     .then(dbUserData => res.json(dbUserData))
     .catch(err => res.json(err));
+}
 };
 
 module.exports = userController;
