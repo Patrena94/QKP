@@ -73,7 +73,7 @@ deleteUser({ params}, res) {
 
 addFriend({ params, body }, res) {
   User.findOneAndUpdate(
-    { _id: params.UsertId },
+    { _id: params.userId },
     { $push: { friends: body } },
     { new: true }
   )
