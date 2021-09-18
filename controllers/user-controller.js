@@ -17,8 +17,8 @@ const userController = {
           });
       },
   //get one User by id
-  getUserById({ params }, res) {
-    User.findOne({ _id: params.id })
+  getUserById(req, res) {
+    User.findOne({ _id: req.params.id })
       .populate({
         path: 'thoughts',
         select: '-__v'
@@ -73,7 +73,7 @@ deleteUser({ params}, res) {
 
 addFriend({ params, body }, res) {
   User.findOneAndUpdate(
-    { _id: params.userId },
+    { _id: params.id },
     { $push: { friends: body } },
     { new: true }
   )
@@ -89,7 +89,7 @@ addFriend({ params, body }, res) {
  // remove friend-userId/friends/:friendId
  removeFriend({ params }, res) {
   User.findOneAndUpdate(
-    { _id: params.UserId },
+    { _id: params.id },
     { $pull: { Friends: { FriendId: params.FriendId } } },
     { new: true }
   )

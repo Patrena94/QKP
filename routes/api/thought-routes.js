@@ -28,13 +28,12 @@ router.route('/:userId').post(addThought);
 
 //set up GET,PUT and Delete by /api/thoughts/:thoughtId
 
-router.route('/:thoughtId').put(updateThought);
-
-router.route('/:thoughtId').get(getThoughtById);
+router.route('/:id').get(getThoughtById).put(updateThought).delete(removeThought);
+// router.route('/:thoughtId').get(getThoughtById);
 
 // router.route('/:thoughtId').delete(removeThought);
 
 
-router.route('/:UserId/:thoughtId/:reactionId').delete(removeReaction);
+router.route('/:userId/:id/:reactionId').delete(removeReaction);
 
 module.exports = router;
