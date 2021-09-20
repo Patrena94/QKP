@@ -106,12 +106,12 @@ const thoughtController = {
       { $push: { reactions: body } },
       { new: true }
     )
-      .then((dbUserData) => {
-        if (!dbUserData) {
+      .then((dbThoughtData) => {
+        if (!dbThoughtData) {
           res.status(404).json({ message: "No User found with this id!" });
           return;
         }
-        res.json(dbUserData);
+        res.json(dbThoughtData);
       })
       .catch((err) => res.json(err));
   },
