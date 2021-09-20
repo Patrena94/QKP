@@ -9,7 +9,6 @@ const {
   getThoughtById,
   updateThought,
   addThought,
-  // deleteThought,
   removeThought,
   addReaction,
   removeReaction,
@@ -25,6 +24,6 @@ router.route('/:userId').post(addThought);
 
 router.route('/:id').get(getThoughtById).put(updateThought).delete(removeThought);
 
-router.route('/:userId/:id/:reactionId').delete(removeReaction);
+router.route('/:id/reactions').delete(removeReaction);
 
 module.exports = router;
