@@ -120,8 +120,8 @@ const thoughtController = {
     Thought.findOneAndUpdate(
       { _id: params.id },
       //  { $pull: { reactions: body} },
-      // { $pull: { reactions: { ReactionId: params.reactionId } } },
-      { $pull: { reactions: params.reactionId } },
+      // { $pull: { reactions: { reactionId: params.reactionId } } },
+      {$pull: { reactions: params.reactionId } },
       { new: true }
     )
       .then((dbThoughtData) => {
