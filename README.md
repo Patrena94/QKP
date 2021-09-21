@@ -43,6 +43,13 @@ The social Network API is utilized to develop the backend of a Social networking
 Users may review a walk-through video of the above description by clicking the Screencastify link below:
 
 # Screencastify
+Please utilize the first video to show Thoughts and User:
+
+https://drive.google.com/file/d/1OzzxD5yYwt68SKQ2iq5ykIeN7701TjLm/view
+
+Please utilize the second video for reactions and friends:
+
+https://drive.google.com/file/d/1LvMcobaDA_qXDAZO17np66AuTPq9hVeT/view?usp=sharing
 
   
 # Contribution
