@@ -11,7 +11,6 @@ const {
 } = require('../../controllers/user-controller');
 
 //Set up Get all and Post at /api/users
-// router.route('/').get(getCallbackFunction).post(postCallbackFunction);
 
 router
 .route('/')
