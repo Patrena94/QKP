@@ -119,11 +119,11 @@ const thoughtController = {
   removeReaction({ params }, res) {
     Thought.findOneAndUpdate(
       { _id: params.id },
-      //  { $pull: { reactions: body} },
-      // { $pull: { reactions: { reactionId: params.reactionId } } },
-      {$pull: { reactions: params.reactionId } },
+   
+      { $pull: { reactions: { reactionId: params.reactionId } } },
+    
       { new: true }
-    )
+    ) 
       .then((dbThoughtData) => {
         if(!dbThoughtData) {
           res.status(404).json({message: "No User Found with this id!"});
